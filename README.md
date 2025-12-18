@@ -109,4 +109,4 @@ task-tracker/
 📄 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 ```
-<div align="center"> Made with ☕ and Java by <b>[Your Name]</b> </div>
+<div align="center"> Made with ☕ and Java by <b>Saksham Kumar</b> </div>
