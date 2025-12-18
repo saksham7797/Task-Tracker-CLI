@@ -1,4 +1,5 @@
 Task Tracker CLI 📝
+
 A simple, command-line interface (CLI) tool to track and manage your daily tasks. Built entirely in Core Java without using any external libraries or frameworks (no Jackson/Gson), focusing on raw file handling and string manipulation logic.
 
 This project is part of the roadmap.sh backend developer roadmap.
