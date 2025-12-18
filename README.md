@@ -1,94 +1,100 @@
-Task Tracker CLI 📝
+# Task Tracker CLI
 
-A simple, command-line interface (CLI) tool to track and manage your daily tasks. Built entirely in Core Java without using any external libraries or frameworks (no Jackson/Gson), focusing on raw file handling and string manipulation logic.
+![Java](https://img.shields.io/badge/Language-Java-orange?style=for-the-badge&logo=java)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
-This project is part of the roadmap.sh backend developer roadmap.
+A robust, zero-dependency command-line interface (CLI) application to track and manage your daily tasks. Built entirely in **Core Java**, this project focuses on raw file handling, data persistence, and custom JSON parsing logic without using external libraries like Jackson or Gson.
 
-🚀 Features
-Add Tasks: Create new tasks with a description.
+> This project is part of the [roadmap.sh backend developer path](https://roadmap.sh/projects/task-tracker).
 
-List Tasks: View all tasks with their ID, description, and status.
+## 📖 Table of Contents
 
-Update Tasks: Modify the description of existing tasks.
+- [Features](#-features)
+- [Prerequisites](#-prerequisites)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Technical Details](#-technical-details)
+- [Project Structure](#-project-structure)
+- [License](#-license)
 
-Delete Tasks: Remove tasks permanently by their ID.
+## ✨ Features
 
-Data Persistence: Automatically saves all data to a local tasks.json file.
+- **Add Tasks:** Create new tasks with a description.
+- **Update Tasks:** Modify the description of existing tasks.
+- **Delete Tasks:** Remove tasks permanently by their unique ID.
+- **List Tasks:** View all tasks with their ID, description, and status (todo, in-progress, done).
+- **Data Persistence:** Automatically saves all data to a local `tasks.json` file.
+- **Zero Dependencies:** Implements a custom "Desi" parser to read and write JSON data manually.
 
-Zero Dependencies: No external JSON libraries used; implemented a custom parser to read/write JSON data.
+## 🛠 Prerequisites
 
-🛠️ Prerequisites
-Java Development Kit (JDK): Version 11 or higher.
+Ensure you have the following installed on your machine:
 
-📦 How to Run
-Clone the repository (or download the files):
+- **Java Development Kit (JDK):** Version 11 or higher.
 
-Bash
+Verify your installation:
+```bash
+java -version
 
-git clone https://github.com/saksham7797/Task-Tracker-CLI-.git
+🚀 Installation
+Clone the repository
+git clone [https://github.com/saksham7797/task-tracker.git](https://github.com/saksham7797/task-tracker.git)
+
+Navigate to the project directory
 cd task-tracker
-Compile the Java file:
-
-Bash
-
+Compile the Java code
 javac TaskTracker.java
-Run the application: Use the java TaskTracker command followed by the operation you want to perform.
 
-💻 Usage Commands
-Here are the commands to use the application:
+💻 Usage
+Run the application using the java command followed by the operation arguments.
 
 1. Add a new task
-Bash
-
-java TaskTracker add "Buy groceries for the week"
+java TaskTracker add "Buy groceries"
 # Output: Task added successfully (ID: 1)
 
 2. List all tasks
-Bash
-
 java TaskTracker list
 # Output:
-# [1] Buy groceries for the week - Status: todo
-# [2] Finish Java project - Status: in-progress
+# ID: 1 | Status: todo | Description: Buy groceries
+# ID: 2 | Status: in-progress | Description: Learn Java
 
 3. Update a task
-Provide the Task ID and the New Description.
-
-Bash
-
-java TaskTracker update 1 "Buy groceries and snacks"
+Requires the Task ID and the New Description.
+java TaskTracker update 1 "Buy groceries and cook dinner"
 # Output: Task updated successfully.
 
 4. Delete a task
-Provide the Task ID to remove.
-
-Bash
-
+Requires the Task ID.
 java TaskTracker delete 1
 # Output: Task deleted successfully.
 
-🧠 Technical Highlights (How it works)
-Since external libraries like Jackson were not allowed, I implemented a custom logic to handle JSON data:
+🧠 Technical Details
+Why No Libraries?
+The challenge of this project was to build a backend application without using any external libraries or frameworks. This required understanding the fundamentals of:
 
-Data Storage: Tasks are stored in a tasks.json file in the current directory.
+File I/O: Using java.nio.file and java.io packages to handle file existence checks, reading, and writing.
 
-Custom Parser:
+String Manipulation: Implementing a custom JSON parser using String.split(), String.replace(), and String.substring().
 
-Saving: Uses StringBuilder to manually construct valid JSON strings from Java objects.
+Data Persistence: Managing state persistence between CLI executions using a JSON file (tasks.json).
 
-Loading: Reads the file as a raw String, removes brackets, and uses regex-based splitting (anchoring on }, { patterns) to separate objects. Then, it parses individual fields (id, description, etc.) using custom string extraction logic.
+The Custom Parser Logic
+Since ObjectMapper was not allowed, the application parses data using a marker strategy:
 
-File Handling: Uses java.nio.file.Files for efficient reading and writing.
+Reading: It reads the raw file string, strips brackets [], and splits task objects using the regex pattern }, { as a delimiter.
+
+Writing: It constructs the JSON string manually using StringBuilder to ensure efficient memory usage.
 
 📂 Project Structure
+
 task-tracker/
-├── TaskTracker.java    # Main entry point and logic
-├── Task.java           # Model class for Task object
-├── tasks.json          # Auto-generated file storing your data
-└── README.md           # Documentation
-🤝 Contributing
-Feel free to fork this repository and submit pull requests to add features like:
+├── TaskTracker.java    # Main entry point and CLI logic
+├── Task.java           # Data model class (ID, Description, Status)
+├── tasks.json          # Data storage (Auto-generated on first run)
+├── LICENSE             # MIT License
+└── README.md           # Project documentation
+📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-Marking tasks as in-progress or done.
-
-Listing tasks by status (e.g., list done).
+<div align="center"> Made with ☕ and Java by <b>Saksham Kumar</b> </div>
