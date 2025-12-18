@@ -25,7 +25,7 @@ Clone the repository (or download the files):
 
 Bash
 
-git clone https://github.com/your-username/task-tracker.git
+git clone https://github.com/saksham7797/Task-Tracker-CLI-.git
 cd task-tracker
 Compile the Java file:
 
