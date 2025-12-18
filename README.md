@@ -106,7 +106,8 @@ task-tracker/
 ├── tasks.json          # Data storage (Auto-generated on first run)
 ├── LICENSE             # MIT License
 └── README.md           # Project documentation
+```
 📄 License
 This project is licensed under the MIT License. See the LICENSE file for details.
-```
+
 <div align="center"> Made with ☕ and Java by <b>Saksham Kumar</b> </div>
