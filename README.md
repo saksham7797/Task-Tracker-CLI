@@ -35,40 +35,51 @@ Ensure you have the following installed on your machine:
 
 Verify your installation:
 ```bash
-java -version
-
 🚀 Installation
 Clone the repository
-git clone [https://github.com/saksham7797/task-tracker.git](https://github.com/saksham7797/task-tracker.git)
 
+Bash
+
+git clone [https://github.com/your-username/task-tracker.git](https://github.com/your-username/task-tracker.git)
 Navigate to the project directory
+
+Bash
+
 cd task-tracker
 Compile the Java code
-javac TaskTracker.java
 
+Bash
+
+javac TaskTracker.java
 💻 Usage
 Run the application using the java command followed by the operation arguments.
 
 1. Add a new task
+Bash
+
 java TaskTracker add "Buy groceries"
 # Output: Task added successfully (ID: 1)
-
 2. List all tasks
+Bash
+
 java TaskTracker list
 # Output:
 # ID: 1 | Status: todo | Description: Buy groceries
 # ID: 2 | Status: in-progress | Description: Learn Java
-
 3. Update a task
 Requires the Task ID and the New Description.
+
+Bash
+
 java TaskTracker update 1 "Buy groceries and cook dinner"
 # Output: Task updated successfully.
-
 4. Delete a task
 Requires the Task ID.
+
+Bash
+
 java TaskTracker delete 1
 # Output: Task deleted successfully.
-
 🧠 Technical Details
 Why No Libraries?
 The challenge of this project was to build a backend application without using any external libraries or frameworks. This required understanding the fundamentals of:
@@ -87,6 +98,7 @@ Reading: It reads the raw file string, strips brackets [], and splits task objec
 Writing: It constructs the JSON string manually using StringBuilder to ensure efficient memory usage.
 
 📂 Project Structure
+Bash
 
 task-tracker/
 ├── TaskTracker.java    # Main entry point and CLI logic
@@ -96,5 +108,5 @@ task-tracker/
 └── README.md           # Project documentation
 📄 License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-<div align="center"> Made with ☕ and Java by <b>Saksham Kumar</b> </div>
+```
+<div align="center"> Made with ☕ and Java by <b>[Your Name]</b> </div>
